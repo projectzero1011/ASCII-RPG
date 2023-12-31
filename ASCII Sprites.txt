@@ -1,0 +1,276 @@
+//----------------------------------------------------------------------------------------------------------------
+
+Player
+  O
+ /|\
+ / \
+
+//----------------------------------------------------------------------------------------------------------------
+
+// Choose one consistent text box size,
+3 or 5 spaces inside text box, odd # of spaces,
+most likey 3 spaces tbh
+
+Player Death Screen
+
+ O
+/|\
+> >
+
+
+ ____O
+> > \\
+
+
+═══════Player═══════
+	\	/	  
+	U	U	  
+	  ────		  
+═══════════════════
+
+
+═══════Player════════
+        I'll live
+        to fight
+      another day...
+════════════════════
+
+Continue? (y/n): 
+
+//----------------------------------------------------------------------------------------------------------------
+
+Player		  Enemy
+		  ,_,
+ O__	/_ /_ 	   O
+/|	 /  /	 Z/|\\\Z
+/ \		  / \ \\
+
+Player		  Enemy
+		  ,_,
+ O 		   O
+/|\		  /|\\\
+/ \		  / \ \\
+
+/_  /_
+ /_  /_
+  /   /
+
+//----------------------------------------------------------------------------------------------------------------
+
+Player		  Enemy
+		  ,_,
+ O__	           O
+/|	»» ☼    ☼/|\\\☼
+/ \		  / \ \\
+
+Player		  Enemy
+		  ,_,
+ O 		   O
+/|\		  /|\\\
+/ \		  / \ \\
+
+»» ≡ ☼
+
+//----------------------------------------------------------------------------------------------------------------
+
+Player		  Enemy
+                  ,_,
+ O__    * *        O
+/|     * * *     */|\\\*
+/ \     * *       / \ \\
+
+Player		  Enemy
+		  ,_,
+ O 		   O
+/|\		  /|\\\
+/ \		  / \ \\ 
+
+
+ ♦ ♦
+♦ ♦ ♦
+ ♦ ♦
+
+ * *
+* * *
+ * *
+
+//----------------------------------------------------------------------------------------------------------------
+
+Enemy
+
+  X
+ /|\
+ / \
+
+//----------------------------------------------------------------------------------------------------------------
+
+Level ?
+Boss
+ ,_,
+  O 
+ /|\\\
+ / \ \\
+
+//----------------------------------------------------------------------------------------------------------------
+
+Special Item Get Screen:
+Critical Hit Screen:
+
+═══════Player═══════
+        \       /	 
+        o       o	 
+          ────		 
+═══════════════════
+
+//----------------------------------------------------------------------------------------------------------------
+
+Battle Screen:
+
+HP ♥|♥|♥	      HP ♥|♥|♥
+SP ✦|✦|✦		  
+		  
+Player		  Enemy
+		  ,_,
+ O 		   O 		// For Attack Animations,
+/|\		  /|\\\		// Change only these 3 lines
+/ \		  / \ \\	// "\t" to move sprites
+
+1 Attack	2 Spell
+3 Bag		4 Defend
+
+// Might change order of options
+
+//----------------------------------------------------------------------------------------------------------------
+
+// Enemy "draws" player closer when attacking (2nd frame)
+to convey more "force" behind attack
+
+// Weird tab behavior, inputs two spaces if you press tab 
+after one tab, check if IDE will do this
+
+// Having 4 frames of animation might be tedious, make it
+2 frames, attack then go back to original position
+
+// Remember, we ask people to go the next frame each turn,
+for both player and enemy
+
+Enemy 
+Attack Animation
+
+
+Player		  Enemy
+	  ,_,
+  O      __O
+ /|\<::}=+ |\\\
+ / \	  / \ \\
+
+
+Player		  Enemy
+		  ,_,
+ O 		   O
+/|\		  /|\\\
+/ \		  / \ \\
+
+
+//----------------------------------------------------------------------------------------------------------------
+
+// Player "draws" Enemy closer when attacking (2nd frame)
+to convey more "force" behind attack
+
+// Weird tab behavior, inputs two spaces if you press tab 
+after one tab, check if IDE will do this
+
+// Having 4 frames of animation might be tedious, make it
+2 frames, attack then go back to original position
+
+// Remember, we ask people to go the next frame each turn,
+for both player and enemy
+
+Player
+Attack Animation
+
+
+Player		  Enemy
+	         ,_,
+ 	 O__      O
+	/| +={::>/|\\\
+        / \	 / \ \\
+
+Player		  Enemy
+		  ,_,
+ O 		   O
+/|\		  /|\\\
+/ \		  / \ \\
+
+
+//----------------------------------------------------------------------------------------------------------------
+
+//---Battle Screen Sprites---//
+
+Heart
+♥
+Unicode
+"\u2665"
+
+
+(MP)
+Black Four Pointed Star
+✦
+Unicode
+"\u2726"
+
+
+Black Square
+■
+Unicode
+"\u25A0"
+
+
+Circled White Star
+✪
+Unicode
+"\u272A"
+
+//----------------------------------------------------------------------------------------------------------------
+
+//---Map Screen Sprites---//
+
+Player Map Sprite
+@
+
+or just "P"
+
+
+Enemy Map Sprite
+%
+
+or just "E"
+
+
+Black Club
+♣
+
+Hex
+"\x05"
+
+//----------------------------------------------------------------------------------------------------------------
+
+//---Possible Special Item Sprites---//
+
+Black Diamond
+♦
+Hex
+"\x04"
+
+Black Club
+♣
+Hex
+"\x05"
+
+Black Spade
+♠
+Hex
+"\x06"
+
+
+//----------------------------------------------------------------------------------------------------------------
