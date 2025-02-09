@@ -362,7 +362,7 @@ const vector<string> battle_frame_tbl = {"battle", "player_attack",
 // helper function to class Frame_manager
 // needs pre-condition to prevent random string inputs
 string load(string& name) {
-    ifstream ist {name + ".txt"};
+    ifstream ist {"../files/" + name + ".txt"};
     if (!ist) throw runtime_error("Can't open input file ");
 
     string frame;
