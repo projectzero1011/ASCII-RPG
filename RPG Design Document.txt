@@ -1,0 +1,281 @@
+//-------------Major Decisions---------------
+
+Debate:
+
+• Have to be careful because hitting enemy 7 times in a row with say 80% or 85% accuracy might be really rare; adjust/ test accuracy based on this point
+
+• Look into RNG Systems in games, and player psychology (what is considered good stats for a player? Our notion of "good accuracy is probably very different from what actual good accuracy is, {90% might be terrible, etc})
+
+
+Level 1 Enemy 
+    Health: 30 HP
+    
+Level 2 Enemy
+    Health: 50 HP
+    
+Level 3 Enemy
+    Health: 70 HP
+    
+Final Boss
+    Health: 99 HP
+
+//------------------------------------------
+
+Story
+
+Player:
+Exiled/Non-Exiled Lord, Prince, or Royalty in the vein of Addam, Marth, Jonathan Joestar, etc
+
+or,
+
+Rogue Mercenary
+
+Both have a special trinket or part of a special trinket that is sought after in some way or another
+
+
+Level 1 Enemy:
+2 HP
+Basic rugged thief attempting to steal special trinket in an attempt to get rich
+
+Level 2 Enemy:
+3 HP
+Knight/Paladin, sent from the royal castle of the kingdom that exiled the player or from the rival kingdom of the player to retrieve the special trinket
+
+Level 3 Enemy:
+5 HP
+Maybe same as level 2 Enemy, and level 2 Enemy is just some mage/wizard that detected the special trinket and has an eccentric personality
+
+or,
+
+Lord or higher level Knight also looking to retrieve the special trinket, or just a dragon or beast of some kind (if ASCII Art allows)
+
+
+Final Level Enemy:
+7 HP
+(Hidden Boss/Final Boss)
+
+Final Boss: 
+7 HP
+Reach the castle of the kingdom that exiled the player to face the rival lord in battle in the throne room
+
+
+//
+Hidden Boss:
+9 HP
+
+Both of these enemies will have special behavior, animations, conditions, stats, moves, etc, and will require all of the things you have gathered on your journey to be able to beat them
+//
+
+
+//
+To implement dialogue, do this:
+
+vector<string> dialogue(2);
+
+for(int i = 0; i < dialogue.size(); i++) {
+       system("cls");
+       PRINT still frame;
+       cout << dialogue[i];
+       prompt_next();
+}
+//
+
+scripted_scene(vector script, string frame) will do the above written code, which will take a script and print it out in the form of a series of dialogue boxes
+
+cout << dialogue[i] will be a function called void print_dialogue_box(string message) which will envelop the dialogue into a dialogue box
+
+//------------------Ideas--------------------
+
+//
+• No healing in between stages (Enemy will go first if no special item, you will go first if you have special item)
+
+• If you get special item next to enemy, you will still get it, but only after the battle, and the enemy will go first
+
+• Player/Enemy can increase their number of turns (Turn Economy)
+
+• Doing super effective spells can skip player/enemy turns like SMT Switch, and when perform spell, changes player/enemy weakness, so there is chain of correct spells you must perform
+
+• If you beat the game mastering the grand round system (little DMG taken, all special items), or meet some special condition, unlock hidden boss or endless mode
+
+• Roguelike system or mode where you constantly battle enemies round after round, and constantly gain new special items, stats, and moves, and see how far you get, while also optimizing your turn based battle strategies
+
+• Pick what skills/moves you want for more replayability 
+
+• Low HP = Crit Rate UP and/or Crit UP
+//
+
+//------------------------------------------
+
+1) Implement & test battlescene() for each enemy and their respective stage
+
+
+
+//------------------------------------------
+
+Player Specifications
+
+Stats
+• 3 HP
+• 3 MP
+
+
+Moves
+
+Attack
+• 90% Accuracy
+• Deal 2 (+2) DMG
+• +1 MP
+
+Parry
+• 70% Success Rate
+• +1 Turn
+• +1 MP
+
+Spell
+• 100% Spell Accuracy
+
+
+//
+Ideas
+
+• Maybe make it so you always have 100% accuracy, but the enemy has 80% accuracy, but I doubt that this will pass
+
+• Maybe 10% Crit Chance
+
+• Maybe Low HP: (Crit Rate UP) V (Crit UP)
+//
+
+
+//
+Spell
+
+100% Chance of bonus iff you figure out the enemy weakness
+
+Enemy becomes spell element and will change weakness according to what element is good against enemy's current elemental status to cycle elemental weaknesses
+
+Fire -> Ice -> Lightning -> Fire -> ...
+
+>Optional Bonus when enemy defends
+       -Maybe casting round breaks enemy defense if enemy defends like the player; iff you hit round weakness
+
+>Optional Bonus when enemy stunned by round weakness
+       -Maybe Crit Rate UP
+//
+
+
+//
+Miscellaneous
+
+
+You carry your MP into the next stage
+
+[Need strategy to finish with full MP for the next stage; also makes it so that attack is not useless too; saves MP for next stage]
+
+
+Spells do consistent DMG
+
+[Nice to have consistency with spell DMG, kind of confusing to have spells do a variable amount of DMG maybe]
+
+
+Inclusion of MP Bar
+
+[Allows recharge MP by attacking or defending to prevent a race to zero hp and allowing multiple use of spells while limiting use of spells]
+
+[If unlimited spells, can just cast round and prevent enemy movement entirely; game is over once you figure out weaknesses, and that's boring]
+
+
+2 MP Grand cast Requirement
+
+[Encourages players to cast round in the first stage to figure out weakness system in the first stage]
+
+[Encourages players to experiment with round more b/c Round is only 1 MP vs Grand is 2MP]
+
+
+Player starts at 0 MP
+
+[Forces player to cast round at stage 1]
+
+[Allows advanced players to use first stage as set up for next stage]
+
+[More satisfying to build your MP]
+
+[More satisfying to do Max MP Attacks]
+//
+
+
+Enemy Specifications
+
+[x] HP 
+
+Moves
+
+Attack
+• 90% Accuracy
+• Deal 3 (+2) DMG
+
+
+//------------------------------------------
+
+Test Results:
+
+- Quickly becomes a race to 0 once your spells run out (Player attacks...Enemy attacks...Player attacks... 
+(Maybe occasional miss, defend_fail, etc)
+
+Possible solutions:
+
+1) Biggest annoyance is the enemy attacking right after you heal
+
+2) Mastering weaknesses will yield more rewards than just spamming spells
+
+3) Perhaps add these effects to spells
+
+- Freeze status effect (Skip 2 turns/Round)
+- Lightning status effect (Buff/Grand)
+
+At the same time, I want to keep things relatively simple
+
+**Might take crit up bonus and 2nd option
+
+
+// ---------------Testing---------------------
+
+***TEST
+Enemy (Lv 1) 3 HP
+Obtain Ice crystal, Weak to Ice
+
+Results so far:
+
+
+
+***TEST
+Enemy (Lv 2) 5 HP
+Obtain Lightning crystal, Weak to Ice
+
+Results so far:
+
+
+
+***TEST
+Enemy (Lv 3) 7 HP
+Obtain Fire crystal, Weak to Lightning 
+
+Results so far:
+
+
+
+***TEST
+Enemy (Final) 9 HP
+Weak to Fire
+
+Results so far:
+
+
+***TEST
+Full game with stages with respective enemies in each stage
+
+Results so far:
+
+
+
+
+//------------------------------------------
