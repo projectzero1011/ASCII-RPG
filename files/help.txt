@@ -1,0 +1,14 @@
+  _   _      _       
+ | | | | ___| |_ __  
+ | |_| |/ _ \ | '_ \ 
+ |  _  |  __/ | |_) |
+ |_| |_|\___|_| .__/ 
+              |_|    
+
+1: Atk  (+1 MP)   7: Fire (-1 MP)
+2: Def  (+1 MP)	  8: Ice  (-2 MP)
+3: Heal (-2 MP)	  9: Ltng (-3 MP)	
+
+@: Player    █: Wall     h: help
+%: Enemy     ♠: Item     q: quit
+
